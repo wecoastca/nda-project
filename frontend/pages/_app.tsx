@@ -1,4 +1,4 @@
-import App from "next/app"
+import App, {AppProps} from "next/app"
 import Head from "next/head"
 import "../assets/css/style.css"
 import { createContext } from "react"
@@ -8,7 +8,7 @@ import { getStrapiMedia } from "../lib/media"
 // Store Strapi Global object in context
 export const GlobalContext = createContext({})
 
-const MyApp = ({ Component, pageProps }) => {
+const MyApp = ({ Component, pageProps }: AppProps) => {
   const { global } = pageProps
 
   return (

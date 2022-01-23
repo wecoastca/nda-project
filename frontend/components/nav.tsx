@@ -1,17 +1,17 @@
 import React from "react"
 import Link from "next/link"
 
-const Nav = ({ categories }) => {
+const Nav = ({ categories }: {categories: any}) => {
   return (
     <div>
       <nav className="uk-navbar-container" data-uk-navbar>
         <div className="uk-navbar-left">
           <ul className="uk-navbar-nav">
-            <li>
+            {/* <li>
               <Link href="/">
                 <a>Strapi Blog</a>
               </Link>
-            </li>
+            </li> */}
           </ul>
         </div>
         <div className="uk-navbar-right">

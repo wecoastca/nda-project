@@ -112,3 +112,13 @@ exports
 *.cache
 build
 .strapi-updater.json
+
+############################
+# VSCode
+############################
+.vscode
+
+############################
+# Optional REPL history
+############################
+frontend/.next

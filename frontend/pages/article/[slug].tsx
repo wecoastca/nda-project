@@ -5,8 +5,9 @@ import Layout from "../../components/layout"
 import NextImage from "../../components/image"
 import Seo from "../../components/seo"
 import { getStrapiMedia } from "../../lib/media"
+import { GetStaticPaths, GetStaticProps } from "next"
 
-const Article = ({ article, categories }) => {
+const Article = ({ article, categories }: {article: any, categories: any}) => {
   const imageUrl = getStrapiMedia(article.attributes.image)
 
   const seo = {
@@ -58,7 +59,7 @@ const Article = ({ article, categories }) => {
   )
 }
 
-export async function getStaticPaths() {
+export const getStaticPaths: GetStaticPaths = async () => {
   const articlesRes = await fetchAPI("/articles", { fields: ["slug"] })
 
   return {
@@ -71,7 +72,7 @@ export async function getStaticPaths() {
   }
 }
 
-export async function getStaticProps({ params }) {
+export const getStaticProps: GetStaticProps = async ({params}) => {
   const articlesRes = await fetchAPI("/articles", {
     filters: {
       slug: params.slug,

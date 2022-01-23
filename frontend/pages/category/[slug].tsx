@@ -2,8 +2,9 @@ import Articles from "../../components/articles"
 import { fetchAPI } from "../../lib/api"
 import Layout from "../../components/layout"
 import Seo from "../../components/seo"
+import { GetStaticPaths, GetStaticProps } from "next"
 
-const Category = ({ category, categories }) => {
+const Category = ({ category, categories }: {category: any, categories: any}) => {
   const seo = {
     metaTitle: category.attributes.name,
     metaDescription: `All ${category.attributes.name} articles`,
@@ -22,7 +23,7 @@ const Category = ({ category, categories }) => {
   )
 }
 
-export async function getStaticPaths() {
+export const getStaticPaths: GetStaticPaths = async () => {
   const categoriesRes = await fetchAPI("/categories", { fields: ["slug"] })
 
   return {
@@ -34,8 +35,7 @@ export async function getStaticPaths() {
     fallback: false,
   }
 }
-
-export async function getStaticProps({ params }) {
+export const getStaticProps: GetStaticProps = async ({params}) => {
   const matchingCategories = await fetchAPI("/categories", {
     filters: { slug: params.slug },
     populate: {

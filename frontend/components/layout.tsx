@@ -1,6 +1,6 @@
 import Nav from "./nav"
 
-const Layout = ({ children, categories, seo }) => (
+const Layout = ({ children, categories }: {children: any, categories: any}) => (
   <>
     <Nav categories={categories} />
     {children}
