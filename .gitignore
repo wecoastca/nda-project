@@ -121,4 +121,4 @@ build
 ############################
 # Optional REPL history
 ############################
-frontend/.next
+.next
