@@ -3,6 +3,7 @@ import NextImage from "next/image"
 
 const Image = ({ image }) => {
   const { url, alternativeText, width, height } = image.data.attributes
+  console.log(width, height)
 
   // const loader = () => {
   //   return getStrapiMedia(image)

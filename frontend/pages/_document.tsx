@@ -1,5 +1,6 @@
 import Document, { Html, Head, Main, NextScript } from "next/document"
 
+// TODO: Убрать uikit и все, что с ним связано.
 class MyDocument extends Document {
   render() {
     return (
@@ -8,7 +9,7 @@ class MyDocument extends Document {
           {/* eslint-disable-next-line */}
           <link
             rel="stylesheet"
-            href="https://fonts.googleapis.com/css?family=Staatliches"
+            href="https://fonts.googleapis.com/css2?family=Inter&family=Rubik:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap"
           />
           <link
             rel="stylesheet"
