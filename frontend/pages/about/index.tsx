@@ -1,11 +1,9 @@
 import { GetStaticProps } from "next"
 import React from "react"
-import Layout from "../components/layout"
-import Seo from "../components/seo"
-import { fetchAPI } from "../lib/api"
-import Card from "../components/card"
+import Layout from "../../components/layout"
+import { fetchAPI } from "../../lib/api"
 
-const Home = ({
+const About = ({
   categories,
   homepage,
   articles,
@@ -18,21 +16,19 @@ const Home = ({
 
   return (
     <Layout categories={categories}>
-      {/* <Seo seo={homepage.attributes.seo} /> */}
-      <div className="border-r border-yellow-500 h-full w-5/12 flex flex-col  justify-around px-8 shrink-0">
-        <p className="text-5xl">
-          All works are blured until we dive into the process and restrictions.
+      <div className="border-r border-yellow-500 h-full w-5/12 flex flex-col px-8 shrink-0 py-28">
+        <p className="text-5xl pb-24">Process</p>
+        <p style={{ fontSize: "32px", lineHeight: "48px" }}>
+          All works were redrawn in low fidelity style and then blured. Color
+          block are only reminder about the work.
         </p>
-        <div className="text-2xl">
-          With hover you could pry about the final decisions but don’t have a
-          clue why they was made.
-        </div>
       </div>
-      <div className="h-full p-10 flex gap-10 flex-auto items-center overflow-scroll">
-        {/* Замени articles, когда поменяешь структуру данных */}
-        {articles?.map((x, i) => (
-          <Card cardData={x} key={i} />
-        ))}
+      <div className="h-full px-8 flex flex-col py-28 w-5/12">
+        <p className="text-5xl pb-24">Team</p>
+        <p style={{ fontSize: "32px", lineHeight: "48px" }}>
+          All works were redrawn in low fidelity style and then blured. Color
+          block are only reminder about the work.
+        </p>
       </div>
     </Layout>
   )
@@ -61,4 +57,4 @@ export const getStaticProps: GetStaticProps = async () => {
   }
 }
 
-export default Home
+export default About
