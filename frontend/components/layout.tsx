@@ -1,29 +1,32 @@
-import { useRouter } from "next/router"
-import Nav from "./nav"
+import { useRouter } from 'next/router';
+import Nav from './nav';
 
 const Layout = ({
   children,
   categories,
 }: {
-  children: any
-  categories: any
+  children: any;
+  categories: any;
 }) => {
-  const router = useRouter()
+  const router = useRouter();
+  // layout-sp
   return (
-    <div className="relative h-screen">
+    <div className="flex flex-col h-screen">
       <Nav categories={categories} />
 
-      <div className="absolute top-20 w-screen layout-sp overflow-hidden">
-        <div className="hidden w-20 border-r border-yellow-500 h-full fixed mb-8 z-10 md:block"></div>
-        <div className="ml-20 flex flex-col md:flex-row h-full">{children}</div>
+      <div className="flex w-screen overflow-hidden flex-1">
+        <div className="hidden w-16 xl:w-20 border-r border-yellow-500 lg:block shrink-0"></div>
+        <div className="flex flex-col justify-evenly my-4 md:my-8 lg:my-0 lg:flex-row lg:justify-start">
+          {children}
+        </div>
       </div>
 
-      <div className="fixed bottom-0 w-full h-20 border-t border-yellow-500 bg-white z-10 flex items-center">
-        {router?.asPath === "/" ? (
+      <div className="bottom-0 w-full h-20 border-t border-yellow-500 bg-white flex items-center">
+        {router?.asPath === '/' ? (
           <p className="ml-4">
             Idea — <span className="text-yellow-500">wid0ki</span>,
-            illustrations —{" "}
-            <span className="text-yellow-500">Margarita Shatalova</span>, code —{" "}
+            illustrations —{' '}
+            <span className="text-yellow-500">Margarita Shatalova</span>, code —{' '}
             <span className="text-yellow-500">Anton Shishov</span>
           </p>
         ) : (
@@ -35,7 +38,7 @@ const Layout = ({
         )}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;
