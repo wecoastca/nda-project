@@ -13,6 +13,7 @@ const Image = ({ image, ...otherProps }: ImageProps) => {
   // }
 
   return (
+    //@ts-ignore
     <NextImage
       // loader={loader}
       layout="fill"
