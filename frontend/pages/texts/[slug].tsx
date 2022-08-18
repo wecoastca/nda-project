@@ -3,6 +3,7 @@ import Card from '../../components/card';
 import Layout from '../../components/layout';
 import Link from 'next/link';
 import { fetchAPI } from '../../lib/api';
+import { FC } from 'react';
 
 const FIELDS = {
   period: '2018',
